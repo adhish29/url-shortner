@@ -12,6 +12,8 @@ import { staticRoute } from "./router/staticRouter.js";
 import { userRoute } from "./router/user.js";
 import { isAuth, restrictToLoggedInUserOnly } from "./middleware/auth.js";
 
+const PORT = process.env.PORT || 3000;
+
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -56,4 +58,4 @@ export async function redirectToURL(req, res) {
 
 app.get("/url/:shortURL", redirectToURL);
 
-app.listen(3000, () => console.log("Listening to PORT 3000"));
+app.listen(PORT, () => console.log(`Listening to PORT ${PORT}`));

@@ -1,0 +1,10 @@
+version: '3.9'
+
+services:
+  api:
+    build: .
+    ports:
+      - 4000:3000
+    environment:
+      MONGO_URI: <mongo uri>
+      PORT: 3000
